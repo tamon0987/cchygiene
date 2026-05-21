@@ -1,0 +1,20 @@
+# Reports — generated, machine-local
+reports/
+*.report.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.python-version
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Local Claude Code settings, if any are kept alongside
+.claude/settings.local.json
