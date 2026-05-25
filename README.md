@@ -15,15 +15,17 @@ cchygiene scans your Claude Code session logs (`~/.claude/projects/*/*.jsonl`) a
 
 ## Install
 
+Requires Python 3.12+ and [`uv`](https://docs.astral.sh/uv/).
+
 ```bash
 git clone https://github.com/tamon0987/cchygiene.git
 cd cchygiene
-pip install -e .
+uv venv
+source .venv/bin/activate    # On Windows: .venv\Scripts\activate
+uv pip install -e .
 ```
 
-Requires Python 3.12+. No external dependencies — uses only the standard library.
-
-Then use `cchygiene` from any directory:
+Then use `cchygiene` from any directory (while venv is activated):
 ```bash
 cchygiene
 cchygiene -o reports/$(date +%Y-%m-%d).md
