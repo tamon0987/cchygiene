@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cchygiene"
+version = "0.1.0"
+description = "Health check for Claude Code context assets (CLAUDE.md, MEMORY.md, memory files, skills, agents)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Tamon Hartry"}]
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/tamon0987/cchygiene"
+
+[project.scripts]
+cchygiene = "cchygiene:main"

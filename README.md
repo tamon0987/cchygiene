@@ -18,33 +18,32 @@ cchygiene scans your Claude Code session logs (`~/.claude/projects/*/*.jsonl`) a
 ```bash
 git clone https://github.com/tamon0987/cchygiene.git
 cd cchygiene
-uv run audit.py
+pip install -e .
 ```
 
-Requires [`uv`](https://docs.astral.sh/uv/) (handles Python 3.12 download automatically). No other dependencies — the script uses only the standard library, declared via [PEP 723](https://peps.python.org/pep-0723/) inline metadata.
+Requires Python 3.12+. No external dependencies — uses only the standard library.
 
-Don't have uv yet?
+Then use `cchygiene` from any directory:
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
+cchygiene
+cchygiene -o reports/$(date +%Y-%m-%d).md
 ```
 
 ## Usage
 
 ```bash
 # Default: markdown report to stdout, 30-day read window, 90-day stale threshold
-uv run audit.py
+cchygiene
 
 # Save report
-uv run audit.py -o reports/$(date +%Y-%m-%d).md
+cchygiene -o reports/$(date +%Y-%m-%d).md
 
 # JSON output for further processing
-uv run audit.py --format json | jq '.assets[] | select(.category=="unread_rule")'
+cchygiene --format json | jq '.assets[] | select(.category=="unread_rule")'
 
 # Custom thresholds
-uv run audit.py --window 60 --stale-days 180
+cchygiene --window 60 --stale-days 180
 ```
-
-The shebang is `#!/usr/bin/env -S uv run --script`, so once the file is `chmod +x`-ed, you can also just run `./audit.py`.
 
 ## Categories
 

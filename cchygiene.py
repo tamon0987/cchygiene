@@ -1,8 +1,4 @@
-#!/usr/bin/env -S uv run --script
-# /// script
-# requires-python = ">=3.12,<3.13"
-# dependencies = []
-# ///
+#!/usr/bin/env python3
 """cchygiene — Health check for Claude Code context assets.
 
 Scans Claude Code session logs (~/.claude/projects/*/*.jsonl) and the on-disk
